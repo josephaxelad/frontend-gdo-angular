@@ -1,0 +1,16 @@
+<!-- bradcam_area_start  breadcam_bg -->
+<div class="bradcam_area overlay d-flex align-items-center justify-content-center"
+ [ngStyle]="{'background-image': 'url('+bg+')'}"
+ [ngClass]="{cdo: cdo,sa:sa}">
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-12">
+              <div class="bradcam_text text-center">
+                  <h3 *ngIf="img == ''">{{title}}</h3>
+                  <img *ngIf="img != ''" [src]="img" height="100px" alt="">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- bradcam_area_end  -->

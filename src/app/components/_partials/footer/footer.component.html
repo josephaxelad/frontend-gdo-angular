@@ -1,0 +1,131 @@
+<!-- footer_start  -->
+<footer class="footer" [ngClass]="{footercdo: currentRoute=='/actions/coeur-d-or', footersa: currentRoute=='/actions/shine-academy'}">
+  <div class="footer_top">
+      <div class="container">
+          <div class="row">
+              <div class="col-xl-4 col-md-6 col-lg-4 ">
+                  <div class="footer_widget">
+                      <div class="footer_logo">
+                          <a href="#">
+                              <img height="50" [src]="currentRoute=='/actions/coeur-d-or' ? 'assets/img/logos/Coeur d_Or 1.png' : ( currentRoute=='/actions/shine-academy' ? 'assets/img/logos/Shine Acad logo2.png' : ' assets/img/logos/GD-logo1.png' )" alt="">
+                          </a>
+                      </div>
+                      <p class="address_text">Vous pouvez nous suivre, <br> sur nos differents réseaux sociaux <br> suivants :
+                      </p>
+                      <div class="socail_links">
+                          <ul>
+                              <li>
+                                <a [href]="socialNetworkLink.facebook" target="_blank">
+                                  <i class="fa fa-facebook"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a [href]="socialNetworkLink.instagram" target="_blank">
+                                  <i class="fa fa-instagram"></i>
+                              </a>
+                              </li>
+                              <li>
+                                <a [href]="socialNetworkLink.linkedin" target="_blank">
+                                  <i class="fa fa-linkedin"></i>
+                              </a>
+                              </li>
+                              <li>
+                                <a [href]="socialNetworkLink.tiktok" target="_blank">
+                                  <i class="fa-brands fa-tiktok"></i>
+                              </a>
+                              </li>
+                          </ul>
+                      </div>
+
+                  </div>
+              </div>
+              <div class="col-xl-2 col-md-6 col-lg-2">
+                  <div class="footer_widget">
+                      <h3 class="footer_title">
+                          Menu
+                      </h3>
+                      <ul class="links">
+                        <li><a href="javascript:void(0)" [routerLink]="['/accueil']">Accueil</a></li>
+                        <li><a href="javascript:void(0)" [routerLink]="['/a-propos-de-nous']">A propos</a></li>
+                        <li><a href="javascript:void(0)" [routerLink]="['/actions']">Actions</a></li>
+                        <li><a href="javascript:void(0)" [routerLink]="['/activites']">Activités</a></li>
+                        <li><a href="javascript:void(0)" [routerLink]="['/galerie']">Galerie</a></li>
+                        <!-- <li><a href="javascript:void(0)" [routerLink]="['/mon-compte']">Partenaires</a></li> -->
+                        <li><a href="javascript:void(0)" [routerLink]="['/contacts']">Contacts</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-xl-3 col-md-6 col-lg-3">
+                  <div class="footer_widget">
+                      <h3 class="footer_title">
+                          Contacts
+                      </h3>
+                      <div class="contacts">
+                          <p>+225 01 53 860 056 <br>
+                            contact.gdor@gmail.com <br>
+                              Abidjan, Cote d'Ivoire
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <!-- <div class="col-xl-3 col-md-6 col-lg-3">
+                  <div class="footer_widget">
+                      <h3 class="footer_title">
+                          Top News
+                      </h3>
+                      <ul class="news_links">
+                          <li>
+                              <div class="thumb">
+                                  <a href="#">
+                                      <img src="img/news/news_1.png" alt="">
+                                  </a>
+                              </div>
+                              <div class="info">
+                                  <a href="#">
+                                      <h4>School for African
+                                          Childrens</h4>
+                                  </a>
+                                  <span>Jun 12, 2019</span>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="thumb">
+                                  <a href="#">
+                                      <img src="img/news/news_2.png" alt="">
+                                  </a>
+                              </div>
+                              <div class="info">
+                                  <a href="#">
+                                      <h4>School for African
+                                          Childrens</h4>
+                                  </a>
+                                  <span>Jun 12, 2019</span>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </div> -->
+          </div>
+      </div>
+  </div>
+  <div class="copy-right_text">
+      <div class="container">
+          <div class="row">
+              <div class="bordered_1px "></div>
+              <div class="col-xl-12">
+                  <p class="copy_right text-center">
+                    <!-- <p> -->
+                      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script>
+                     Site réalisé par : <a href="https://www.linkedin.com/in/joseph-axel-ake-danho-825298175/" target="_blank">@Josephaxelad</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <!-- </p> -->
+                    <!-- <i class="ti-heart" aria-hidden="true"></i> -->
+                </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+<!-- footer_end  -->

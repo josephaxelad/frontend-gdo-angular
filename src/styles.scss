@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+.oft3lines{
+  overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.is-invalid{
+  background-color: ivory !important;
+  border: none !important;
+  outline: 2px solid red !important;
+  border-radius: 5px !important;
+}
+.invalid-feedback{
+  display: block !important;
+}
+
+input[type=date]
+{
+    display:block;
+
+    /* Solution 1 */
+    -webkit-appearance: textfield !important;
+    -moz-appearance: textfield !important;
+    min-height: 1.2em !important;
+
+    /* Solution 2 */
+    /* min-width: 96%; */
+}

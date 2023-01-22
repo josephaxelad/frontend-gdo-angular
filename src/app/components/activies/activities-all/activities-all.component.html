@@ -1,0 +1,65 @@
+<app-page-header title="Activités" ></app-page-header>
+    <!--================Blog Area =================-->
+    <section *ngIf="activities.length" class="blog_area section-padding" style="padding: 60px 0 !important;">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 mb-5 mb-lg-0">
+                  <div class="blog_left_sidebar">
+                      <article *ngFor="let activity of activitiesByPage" class="blog_item">
+                          <div class="blog_item_img">
+                              <img class="card-img rounded-0" [src]="activity.attributes.picture?.data?.attributes?.url" alt="">
+                              <a href="#" class="blog_item_date flex-column d-flex justify-content-center align-items-center">
+                                  <h3>{{activity.attributes.createdAt | date : 'd'}}</h3>
+                                  <p>{{activity.attributes.createdAt | date : 'MMM'}} {{activity.attributes.createdAt | date : 'y'}}</p>
+                              </a>
+                          </div>
+
+                          <div class="blog_details">
+                              <a class="d-inline-block" href="single-blog.html">
+                                  <h2>{{activity.attributes.title}}</h2>
+                              </a>
+                              <ul *ngIf="activity.attributes.subtitle" class="blog-info-link">
+                                <li><a href="javascript:void(0)"><i class="fa fa-user"></i> {{activity.attributes.subtitle}}</a></li>
+                              </ul>
+                              <p>{{activity.attributes.description}}</p>
+
+                          </div>
+                      </article>
+
+
+                  </div>
+                  <nav *ngIf="pages.length>1" class="blog-pagination justify-content-center d-flex">
+                    <ul class="pagination">
+                        <li *ngIf="currentPage > 1" class="page-item" (click)="getActivitiesBypage(currentPage-1)">
+                            <a href="javascript:void(0)" class="page-link" aria-label="Previous">
+                                <i class="ti-angle-left"></i>
+                            </a>
+                        </li>
+                        <li *ngFor="let i of pages" class="page-item" [class]="{'active' : i  == currentPage}" (click)="getActivitiesBypage(i)">
+                            <a href="javascript:void(0)" class="page-link">{{i}}</a>
+                        </li>
+                        <li *ngIf="currentPage < numberTotalOfpage" class="page-item" (click)="getActivitiesBypage(currentPage-1)">
+                            <a href="javascript:void(0)" class="page-link" aria-label="Next">
+                                <i class="ti-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!--================Blog Area =================-->
+
+  <section *ngIf="!activities.length" class="blog_area single-post-area section-padding" style="padding: 60px 0 !important;">
+  <div class="container">
+     <div class="row ">
+        <div class="col-lg-12 d-flex justify-content-center align-items-center">
+          <h3 class="text-heading">Aucune activité pour l'instant !</h3>
+        </div>
+        <div class="col-lg-12 d-flex justify-content-center align-items-center">
+          <img src="assets/img/icons/no-data.svg" height="150px" alt="">
+        </div>
+     </div>
+  </div>
+  </section>

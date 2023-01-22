@@ -1,0 +1,110 @@
+<app-page-header title="Contacts"></app-page-header>
+
+<!-- ================ contact section start ================= -->
+<section class="contact-section" style="padding: 60px 0 !important;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h4 class="contact-title">Apportez votre touche, envoyez nous vos suggestions :</h4>
+      </div>
+      <div class="col-lg-8">
+        <form [formGroup]="suggestionForm" (ngSubmit)="add()" class="form-contact contact_form" >
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input class="form-control valid" formControlName="name" id="name" type="text" onfocus="this.placeholder = 'Entrez votre nom'"
+                  onblur="this.placeholder = 'Entrez votre nom'" placeholder="Entrez votre nom"
+                  [ngClass]="{ 'is-invalid':submitted && suggestionForm.controls.name.errors }">
+                  <div *ngIf="submitted && suggestionForm.controls.name.errors" class="invalid-feedback">
+                    <div *ngIf="suggestionForm.controls.name.errors.required">Le nom est réquis !</div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input class="form-control valid" formControlName="email" id="email" type="text" onfocus="this.placeholder = 'Entrez votre Email'"
+                  onblur="this.placeholder = 'Entrez votre Email'" placeholder="Entrez votre Email"
+                  [ngClass]="{ 'is-invalid':submitted && suggestionForm.controls.email.errors }">
+                  <div *ngIf="submitted && suggestionForm.controls.email.errors" class="invalid-feedback">
+                    <div *ngIf="suggestionForm.controls.email.errors.required">L'adresse email est réquise !</div>
+                    <div *ngIf="suggestionForm.controls.email.errors.pattern">L'adresse email est mal formulée !</div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <input class="form-control" formControlName="object" id="subject" type="text" onfocus="this.placeholder = 'Objet'"
+                  onblur="this.placeholder = 'Objet'" placeholder="Objet"
+                  [ngClass]="{ 'is-invalid':submitted && suggestionForm.controls.object.errors }">
+                  <div *ngIf="submitted && suggestionForm.controls.object.errors" class="invalid-feedback">
+                    <div *ngIf="suggestionForm.controls.object.errors.required">L'objet est réquis !</div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <textarea class="form-control w-100" formControlName="message" id="message" cols="30" rows="9"
+                  onfocus="this.placeholder = 'Entrez un message'" onblur="this.placeholder = 'Entrez un message'"
+                  placeholder="Entrez un message"
+                  [ngClass]="{ 'is-invalid':submitted && suggestionForm.controls.message.errors }"></textarea>
+                  <div *ngIf="submitted && suggestionForm.controls.message.errors" class="invalid-feedback">
+                    <div *ngIf="suggestionForm.controls.message.errors.required">Le message est réquis !</div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="submitted && !suggestionForm.valid" class="invalid-feedback">
+            <div >Verifiez que vous avez rempli tous les champs réquis !</div>
+          </div>
+          <div class="form-group mt-3">
+            <button type="submit" class="button button-contactForm boxed-btn">Envoyer</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-3 offset-lg-1">
+        <div class="media contact-info">
+          <span class="contact-info__icon"><i class="ti-home"></i></span>
+          <div class="media-body">
+            <h3>Abidjan, Cote d'Ivoire</h3>
+            <!-- <p>Rosemead, CA 91770</p> -->
+          </div>
+        </div>
+        <div class="media contact-info">
+          <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+          <div class="media-body">
+            <h3>+225 01 53 860 056</h3>
+            <p>Du lundi au Vendredi, de 8h à 18h</p>
+          </div>
+        </div>
+        <div class="media contact-info">
+          <span class="contact-info__icon"><i class="ti-email"></i></span>
+          <div class="media-body">
+            <h3>contact.gdor@gmail.com</h3>
+            <p>Envoyez vos requêtes!</p>
+          </div>
+        </div>
+        <div class="media contact-info">
+          <div class="media-body">
+            <h3>Nos Réseaux Sociaux</h3>
+            <div class="row"><div class="col-12">
+            <div class="social_media_links d-flex justify-content-between">
+              <a style="color: black;" [href]="socialNetworkLink.facebook" target="_blank">
+                  <i class="fa fa-facebook"></i>
+              </a>
+              <a style="color: black;" [href]="socialNetworkLink.instagram" target="_blank">
+                  <i class="fa fa-instagram"></i>
+              </a>
+              <a style="color: black;" [href]="socialNetworkLink.linkedin" target="_blank">
+                  <i class="fa fa-linkedin"></i>
+              </a>
+              <a style="color: black;" [href]="socialNetworkLink.tiktok" target="_blank">
+                  <i class="fa-brands fa-tiktok"></i>
+              </a></div></div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================ contact section end ================= -->

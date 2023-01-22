@@ -1,0 +1,192 @@
+<app-page-header title="Nous rejoindre"></app-page-header>
+
+  <!-- Start Align Area -->
+	<div class="whole-wrap">
+		<div class="container box_1170">
+
+			<div class="section-top-border">
+				<div class="row">
+					<div class="col-lg-7 col-md-8">
+						<h4 class="mb-30">La force d’une association se trouve dans le dynamisme et l’engagement de ses membres,
+              rejoignez-nous ! </h4>
+						<form [formGroup]="joinUsForm" (ngSubmit)="add()">
+              <!-- Prénoms -->
+              <label for="">Prénom(s) : *</label>
+							<div class="">
+								<input formControlName="firstname" type="text"  placeholder=""
+									onfocus="this.placeholder = ''" onblur="this.placeholder = ''" required
+									class="single-input" [ngClass]="{ 'is-invalid':submitted && joinUsForm.controls.firstname.errors }">
+                  <div *ngIf="submitted && joinUsForm.controls.firstname.errors" class="invalid-feedback">
+                    <div *ngIf="joinUsForm.controls.firstname.errors.required">Le prénoms est réquis !</div>
+                  </div>
+							</div>
+              <!-- Nom -->
+              <label for="">Nom : *</label>
+							<div class="">
+								<input formControlName="lastname" type="text"  placeholder=""
+									onfocus="this.placeholder = ''" onblur="this.placeholder = ''" required
+									class="single-input" [ngClass]="{ 'is-invalid':submitted && joinUsForm.controls.lastname.errors }">
+                  <div *ngIf="submitted && joinUsForm.controls.lastname.errors" class="invalid-feedback">
+                    <div *ngIf="joinUsForm.controls.lastname.errors.required">Le nom est réquis !</div>
+                  </div>
+							</div>
+              <!-- Date -->
+              <label for="">Date de naissance : *</label>
+							<div class="">
+								<input formControlName="birthday" type="date"  placeholder="dd-mm-yyyy"  [max]="currentYear-10+'-12-31'"
+									class="single-input" [ngClass]="{ 'is-invalid':submitted && joinUsForm.controls.birthday.errors }">
+                  <div *ngIf="submitted && joinUsForm.controls.birthday.errors" class="invalid-feedback">
+                    <div *ngIf="joinUsForm.controls.birthday.errors.required">La date de naissance est réquise !</div>
+                  </div>
+							</div>
+              <!-- Sexe -->
+              <label for="">Sexe : *</label>
+              <div class="input-group-icon ">
+								<!-- <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div> -->
+								<div class="form-select" >
+											<select id="sex-select"  >
+                        <option value='femme'>femme</option>
+                        <option value='homme'>Homme</option>
+									</select>
+								</div>
+                <!-- <div *ngIf="submitted && sexSelect == '-1'" class="invalid-feedback">
+                  <div >Le sexe est réquis !</div>
+                </div> -->
+							</div>
+              <!-- Email -->
+              <label for="">Adresse Email : *</label>
+							<div class="">
+								<input formControlName="email" type="email" name="EMAIL" placeholder=""
+									onfocus="this.placeholder = ''" onblur="this.placeholder = ''" required
+									class="single-input" [ngClass]="{ 'is-invalid':submitted && joinUsForm.controls.email.errors }">
+                  <div *ngIf="submitted && joinUsForm.controls.email.errors" class="invalid-feedback">
+                    <div *ngIf="joinUsForm.controls.email.errors.required">L'adresse email est réquise !</div>
+                    <div *ngIf="joinUsForm.controls.email.errors.pattern">L'adresse email est mal formulée !</div>
+                  </div>
+							</div>
+              <!-- Phone -->
+              <label for="">Numéro de téléphone : *</label>
+							<div class="input-group-icon ">
+								<!-- <div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div> -->
+								<input formControlName="phone" type="text" name="address" placeholder="" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = ''" required class="single-input"
+                  [ngClass]="{ 'is-invalid':submitted && joinUsForm.controls.phone.errors }">
+                  <div *ngIf="submitted && joinUsForm.controls.phone.errors" class="invalid-feedback">
+                    <div *ngIf="joinUsForm.controls.phone.errors.required">Le numéro de téléphone est réquis !</div>
+                    <!-- <div *ngIf="joinUsForm.controls.phone.errors.pattern">Le numéro de téléphone est mal formulé !</div> -->
+                  </div>
+							</div>
+              <!-- Pays -->
+              <label for="">Pays de résidence : *</label>
+							<div class="input-group-icon ">
+								<!-- <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div> -->
+								<div class="form-select" >
+											<select id="country-select"  >
+									      <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+									</select>
+								</div>
+							</div>
+              <!-- Ville -->
+              <label for="">Ville : *</label>
+              <div class="input-group-icon ">
+								<!-- <div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div> -->
+								<input formControlName="city" type="text" name="address" placeholder="" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = ''" required class="single-input"
+                  [ngClass]="{ 'is-invalid':submitted && joinUsForm.controls.city.errors }">
+                  <div *ngIf="submitted && joinUsForm.controls.city.errors" class="invalid-feedback">
+                    <div *ngIf="joinUsForm.controls.city.errors.required">La ville est réquise !</div>
+                  </div>
+							</div>
+              <!-- Domaine d'activité -->
+              <label for="">Domaine d activité : *</label>
+              <div class="input-group-icon ">
+								<!-- <div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div> -->
+								<input formControlName="fieldActivity" type="text" name="address" placeholder="" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = ''" required class="single-input"
+                  [ngClass]="{ 'is-invalid':submitted && joinUsForm.controls.fieldActivity.errors }">
+                  <div *ngIf="submitted && joinUsForm.controls.fieldActivity.errors" class="invalid-feedback">
+                    <div *ngIf="joinUsForm.controls.fieldActivity.errors.required">Le domaine d'activité est réquis !</div>
+                  </div>
+							</div>
+              <!-- Niveau d'études -->
+              <label for="">Niveau d'études : *</label>
+							<div class="input-group-icon ">
+								<!-- <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div> -->
+								<div class="form-select" >
+											<select id="studiesLevel-select" >
+                        <option value="Primaire">Primaire</option>
+                        <option value="Secondaire">Secondaire</option>
+                        <option value="BAC+1">BAC+1</option>
+                        <option value="BAC+1">BAC+1</option>
+                        <option value="BAC+2">BAC+2</option>
+                        <option value="BTS">BTS</option>
+                        <option value="Licence">Licence</option>
+                        <option value="BAC+4">BAC+4</option>
+                        <option value="BAC+5">BAC+5</option>
+                        <option value="Master">Master</option>
+                        <option value="Doctorat">Doctorat</option>
+									</select>
+								</div>
+							</div>
+              <!-- associativeExperience -->
+              <label for="">Avez vous une expérience associatve ? : *</label>
+              <div class="input-group-icon ">
+								<!-- <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div> -->
+								<div class="form-select" >
+											<select id="associativeExperience-select" >
+									<option value="oui">Oui</option>
+									<option value="non">Non</option>
+									</select>
+								</div>
+							</div>
+              <!-- CV -->
+              <label for="">CV :</label>
+              <div class="input-group-icon ">
+								<!-- <div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div> -->
+								<input type="file" name="address" placeholder="" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = ''" required class="single-input" (change)="onChange($event)">
+							</div>
+              <!-- Qualités -->
+              <label for="">Selon vous, lesquelles de vos qualités seraient utiles au sein de l association ? : *</label>
+							<div class="">
+								<textarea formControlName="qualities" class="single-textarea" placeholder="" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = ''" required
+                  [ngClass]="{ 'is-invalid':submitted && joinUsForm.controls.qualities.errors }"></textarea>
+                  <div *ngIf="submitted && joinUsForm.controls.qualities.errors" class="invalid-feedback">
+                    <div *ngIf="joinUsForm.controls.qualities.errors.required">Les qualités sont réquises !</div>
+                  </div>
+							</div>
+              <!-- howKnowUs -->
+              <label for="">Comment avez vous entendu parler de l'assocation ? : *</label>
+              <div class="input-group-icon ">
+								<!-- <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div> -->
+								<div class="form-select" >
+											<select id="howKnowUs-select" >
+									<option value="Par les réseaux sociaux">Par les réseaux sociaux</option>
+									<option value="Par une connaissance">Par une connaissance</option>
+								</select>
+								</div>
+							</div>
+							<!-- For Gradient Border Use -->
+							<!-- <div class="ùt-10">
+										<div class="primary-input">
+											<input id="primary-input" type="text" name="first_name" placeholder="Primary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Primary color'">
+											<label for="primary-input"></label>
+										</div>
+									</div> -->
+              <div *ngIf="submitted && !joinUsForm.valid" class="invalid-feedback">
+                <div >Verifiez que vous avez rempli tous les champs réquis !</div>
+              </div>
+              <div class="form-group mt-3">
+                <button type="submit" class="button button-contactForm boxed-btn">Valider</button>
+              </div>
+						</form>
+					</div>
+					<!-- <div class="col-lg-3 col-md-4 mt-sm-30">
+
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Align Area -->

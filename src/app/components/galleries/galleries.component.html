@@ -1,0 +1,49 @@
+<app-page-header title="Galerie" ></app-page-header>
+
+<!-- Start Align Area -->
+<div *ngIf="gallerie.length" class="whole-wrap" style="padding: 60px 0 !important;">
+  <div class="container box_1170">
+    <div class="section-top-border">
+      <h3>Galerie d'images</h3>
+      <div class="row gallery-item">
+        <div *ngFor="let image of gallerieByPage;let i = index" [ngClass]="getLength(i+1) ? 'col-md-6' : 'col-md-4'" >
+          <a  [attr.href]="image.attributes.image.data.attributes.url" class="img-pop-up">
+            <div class="single-gallery-image" [ngStyle]="{'background-image': 'url('+image.attributes.image.data.attributes.url+')'}" ></div>
+          </a>
+        </div>
+
+      </div>
+      <nav *ngIf="pages.length>1" class="blog-pagination justify-content-center d-flex">
+        <ul class="pagination">
+            <li *ngIf="currentPage > 1" class="page-item" (click)="getGallerieBypage(currentPage-1)">
+                <a href="javascript:void(0)" class="page-link" aria-label="Previous">
+                    <i class="ti-angle-left"></i>
+                </a>
+            </li>
+            <li *ngFor="let i of pages" class="page-item" [class]="{'active' : i  == currentPage}" (click)="getGallerieBypage(i)">
+                <a href="javascript:void(0)" class="page-link">{{i}}</a>
+            </li>
+            <li *ngIf="currentPage < numberTotalOfpage" class="page-item" (click)="getGallerieBypage(currentPage-1)">
+                <a href="javascript:void(0)" class="page-link" aria-label="Next">
+                    <i class="ti-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+  </div>
+</div>
+<!-- End Align Area -->
+
+<section *ngIf="!gallerie.length" class="blog_area single-post-area section-padding" style="padding: 60px 0 !important;">
+  <div class="container">
+     <div class="row ">
+        <div class="col-lg-12 d-flex justify-content-center align-items-center">
+          <h3 class="text-heading">La galerie est vide pour l'instant !</h3>
+        </div>
+        <div class="col-lg-12 d-flex justify-content-center align-items-center">
+          <img src="assets/img/icons/no-data.svg" height="150px" alt="">
+        </div>
+     </div>
+  </div>
+  </section>

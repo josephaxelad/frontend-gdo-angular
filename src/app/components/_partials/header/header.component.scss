@@ -1,0 +1,57 @@
+.headercdo{
+background-color: #e9b6ad;
+@media screen and (min-width: 992px ) {
+  li{
+  a{
+    color: white;
+   }
+}
+}
+
+
+}
+
+.headercdo.sticky{
+  background-color: #e9b6ad;
+  @media screen and (min-width: 992px ) {
+    li{
+    a{
+      color: white;
+     }
+  }
+  }
+  .submenu{
+    li{
+      a{
+        color: black;
+       }
+    }
+  }
+
+  }
+
+.headersa{
+  background-color: #b96c44;
+}
+
+.headersa.sticky{
+  background-color: #b96c44;
+}
+
+.nrmob{
+  @media screen and (min-width: 992px ) {
+    display: none !important;
+  }
+  a{
+    color: white;
+    }
+  background-color: #139b60;
+}
+
+.nrmobcdo{
+  background-color: #e9b6ad !important;
+}
+
+.nrmobsa{
+  background-color: #b96c44 !important;
+}

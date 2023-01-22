@@ -1,0 +1,87 @@
+<!-- header-start -->
+<header>
+  <div class="header-area ">
+      <div class="header-top_area">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-xl-6 col-md-12 col-lg-8">
+                      <div class="short_contact_list">
+                          <ul>
+                              <li><a href="javascript:void(0)"> <i class="fa fa-phone"></i> +225 01 53 860 056</a></li>
+                              <li><a href="javascript:void(0)"> <i class="fa fa-envelope"></i>contact.gdor@gmail.com</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-xl-6 col-md-6 col-lg-4">
+                      <div class="social_media_links d-none d-lg-block">
+                          <a [href]="socialNetworkLink.facebook" target="_blank">
+                              <i class="fa fa-facebook"></i>
+                          </a>
+                          <a [href]="socialNetworkLink.instagram" target="_blank">
+                              <i class="fa fa-instagram"></i>
+                          </a>
+                          <a [href]="socialNetworkLink.linkedin" target="_blank">
+                              <i class="fa fa-linkedin"></i>
+                          </a>
+                          <a [href]="socialNetworkLink.tiktok" target="_blank">
+                              <i class="fa-brands fa-tiktok"></i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- style="background-color: #139b60 !important;" -->
+      <div id="sticky-header" class="main-header-area" [ngClass]="{headercdo: currentRoute=='/actions/coeur-d-or', headersa: currentRoute=='/actions/shine-academy'}">
+          <div class="container-fluid">
+              <div class="row align-items-center" >
+                  <div class="col-xl-3 col-lg-3">
+                      <div class="logo">
+                          <a href="javascript:void(0)" [routerLink]="['/accueil']">
+                              <img style="width: 170px !important;" height="49px" [src]="currentRoute=='/actions/coeur-d-or' ? 'assets/img/logos/Coeur d_Or 1.png' : ( currentRoute=='/actions/shine-academy' ? 'assets/img/logos/Shine Acad logo2.png' : ' assets/img/logos/GD-logo1.png' )" alt="">
+                          </a>
+                      </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9">
+                      <div class="main-menu">
+                          <nav>
+                              <ul id="navigation">
+                                  <li><a href="javascript:void(0)" [routerLink]="['/accueil']">Accueil</a></li>
+                                  <li><a href="javascript:void(0)" [routerLink]="['/a-propos-de-nous']">A propos</a></li>
+                                  <!-- <li><a href="javascript:void(0)" >Actions</a></li> -->
+                                  <li><a href="javascript:void(0)">Initiatives<i class="ti-angle-down"></i></a>
+                                      <ul class="submenu">
+                                          <li><a href="javascript:void(0)" [routerLink]="['/actions/coeur-d-or']">Coeur d'Or</a></li>
+                                          <li><a href="javascript:void(0)" [routerLink]="['/actions/shine-academy']">Shine Academy</a></li>
+                                      </ul>
+                                  </li>
+                                  <li><a href="javascript:void(0)" [routerLink]="['/activites']">Activités</a></li>
+                                  <li><a href="javascript:void(0)" [routerLink]="['/galerie']">Galerie</a></li>
+                                  <!-- <li><a href="javascript:void(0)" [routerLink]="['/mon-compte']">Partenaires</a></li> -->
+                                  <li><a href="javascript:void(0)" [routerLink]="['/contacts']">Contacts</a></li>
+                                  <li class="nrmob"[ngClass]="{nrmobcdo: currentRoute=='/actions/coeur-d-or', nrmobsa: currentRoute=='/actions/shine-academy'}"><a href="javascript:void(0)" [routerLink]="['/nous-rejoindre']">Nous&nbsp;rejoindre</a></li>
+                                  <!-- <li><a href="#">Contacts<i class="ti-angle-down"></i></a>
+                                      <ul class="submenu">
+                                          <li><a href="blog.html">blog</a></li>
+                                          <li><a href="single-blog.html">single-blog</a></li>
+                                      </ul>
+                                  </li> -->
+
+                              </ul>
+                          </nav>
+                          <div class="Appointment">
+                              <div class="book_btn d-none d-lg-block">
+                                  <a data-scroll-nav='1' href="javascript:void(0)" [routerLink]="['/nous-rejoindre']">Nous&nbsp;rejoindre</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-12">
+                      <div class="mobile_menu d-block d-lg-none"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+<!-- header-end -->

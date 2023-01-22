@@ -1,0 +1,23 @@
+.volenteer_thumb{
+  padding-right: 0 !important;
+}
+
+
+  .domaine{
+    border-radius: 20px;
+    padding: 15px;
+
+    margin: 5px;
+    color: white;
+  }
+
+  .counter_area .overlay:before {
+    background: #ffcc00;
+    opacity: 0.6;
+}
+
+.carmobileimg{
+  @media screen and (max-width: 575px ) {
+    width: 330px !important;
+  }
+}
